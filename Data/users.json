@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "userName": "admin",
+            "password": "1qaz2wsx",
+            "createdDate": "03/02/2022",
+            "numOfTransactions": "unlimited"
+        },
+        {
+            "userName": "aviv",
+            "password": "aviv123",
+            "createdDate": "30/05/2022",
+            "numOfTransactions": "3"
+        },
+        {
+            "userName": "dana",
+            "password": "dana1212",
+            "createdDate": "30/05/2022",
+            "numOfTransactions": "4"
+        },
+        {
+            "userName": "moshe",
+            "password": "mosh1212",
+            "createdDate": "30/05/2022",
+            "numOfTransactions": "6"
+        }
+    ]
+}

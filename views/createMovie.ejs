@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <script>
+
+    function validateGenre(event) {
+
+      let name = document.getElementById("name").value.length
+      let lang = document.getElementById("language").value.length
+
+      let checkedGenre = 0;
+      let genres = document.getElementsByName("genres");
+      genres.forEach(x => {
+        if (x.checked) {
+          checkedGenre++;
+        }
+
+      })
+
+      if (name > 0 && lang > 0 && checkedGenre === 0) {
+        event.preventDefault()
+        document.getElementById("genreError").innerHTML = "Select at least one genre from the list";
+
+
+      }
+
+    }
+
+  </script>
+</head>
+
+
+<body>
+  <h1>Create Movie</h1>
+  <form id="createMovie" action="/createMovie/saveMovie" method="post" onsubmit="validateGenre(event)">
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required /> <br><br>
+
+    <label for="language">Language:</label>
+    <select type="text" name="language" id="language" required>
+      <%- include("../reusableCode/languages.html") %>
+    </select> <br><br>
+
+    <fieldset required>
+      <legend>Genres:</legend>
+      <%- include("../reusableCode/genresCheckboxes.html") %>
+    </fieldset>
+
+    <span id="genreError" style="color: red;"></span> <br><br>
+
+    <button id="saveMovieBtn" type="submit">Save</button>
+
+  </form>
+
+
+</body>
+
+</html>

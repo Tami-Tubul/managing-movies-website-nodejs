@@ -1,0 +1,47 @@
+<html>
+
+<body>
+  <h1>User Data Page</h1>
+ 
+<% if(formType == "add"){  %>
+  <h2>Add New User</h2>
+  <form id="addUserForm" action="/userData/addUser" method="post">
+
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" required /> <br>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required /> <br>
+
+    <label for="transactions">Transactions</label>
+    <input type="number" name="transactions" id="transactions" required /> <br>
+
+    <button id="addUserBtn" type="submit">Save</button> <br>
+    
+    <span id="wrongUser" style="color: red;"><%= wrongUser %></span>
+
+  </form>   
+
+<% } else if(formType == "update"){  %> %> 
+  <h2>Update User</h2>
+  <form id="updateUserForm" action="/userData/updateUser/<%=user.userName%>" method="post">
+
+    <label for="username">Username</label>
+    <input type="text" value="<%=user.userName%>" name="username" id="username" required /> <br>
+
+    <label for="password">Password</label>
+    <input type="password" value="<%=user.password%>" name="password" id="password" required /> <br>
+
+    <label for="transactions">Transactions</label>
+    <input type="number" value="<%=user.numOfTransactions%>" name="transactions" id="transactions" required /> <br>
+
+    <button id="updateUserBtn" type="submit">Update</button> <br>
+    
+    <span id="wrongUser" style="color: red;"><%= wrongUser %></span>
+
+  </form> 
+<% }  %>
+
+</body>
+
+</html>

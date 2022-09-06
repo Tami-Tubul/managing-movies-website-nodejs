@@ -1,0 +1,20 @@
+<html>
+ 
+  <body>
+    <h1>Login Form</h1>
+   <form id="loginForm" action="/" method="post">
+   
+     <label for="username">Username</label>
+     <input type="text" name="username" id="username" required/>  <br>
+
+     <label for="password">Password</label>
+     <input type="password" name="password" id="password" required/>  <br>
+
+    <button id="loginBtn" type="submit">Login</button>
+
+   </form>
+
+  <span class="loginError" style="color: red"> <%= loginError %> </span>
+
+  </body>
+</html>

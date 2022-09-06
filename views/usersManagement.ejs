@@ -1,0 +1,19 @@
+<html>
+
+<body>
+  <h1>Users Management</h1>
+  <ul>
+   <% users.forEach(user => { %>
+      <li> 
+        <%= user.userName %> <br>
+        <a href="userData/deleteUser/<%=user.userName%>">Delete</a> 
+        <a href="userData/updateUser/<%=user.userName%>">Update</a>
+      </li>
+   <%   })  %>
+  </ul> <br>
+
+  <a href="userData/addUser">Add New</a>
+
+</body>
+
+</html>

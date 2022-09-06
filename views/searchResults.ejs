@@ -1,0 +1,46 @@
+<html>
+
+<body>
+  <h1>Search Results</h1>
+  <table id="resultsTable" border="1">
+
+    <thead>
+      <tr>
+        <th>Movie Name</th>
+        <th>Movies with the same genre</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% resultsMovies.forEach(movie=> { %>
+        <tr>
+
+          <td>
+            <a href="/movieData/<%= movie.id %>"><%= movie.name %> </a>
+          </td>
+         
+          <td>
+            <ul>
+              <% movie.sameGenre.map(x=> { %>
+                  <li>
+                    <a href="/movieData/<%= x.id %>"><%= x.name %></a>
+                  </li>
+              <% }) %>
+            </ul>
+          </td>
+
+        </tr>
+
+        <% }) %>
+
+    </tbody>
+
+  </table>
+
+  <br>
+
+  <a href="/menu">Back To Menu Page</a>
+
+</body>
+
+</html>

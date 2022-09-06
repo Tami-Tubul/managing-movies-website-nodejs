@@ -1,0 +1,53 @@
+<html>
+
+<head>
+
+  <script>
+
+   //check if at least one of the fields must be completed
+    function validateForm(event) {
+      
+        let name = document.getElementById("name").value.length
+        let lang = document.getElementById("language").value.length
+        let genres = document.getElementById("genres").value.length
+
+        if (name === 0 && lang === 0 && genres === 0) {
+          alert("At least one of the fields must be completed!")
+          event.preventDefault()
+        }
+        
+        
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <h1>Search Movies</h1>
+
+  <form id="searchMoviesForm" action="/searchMovies/searchResults" method="post" onsubmit="validateForm(event)">
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" /> <br><br>
+
+    <label for="language">Language:</label>
+    <select id="language" name="language">
+      <%- include("../reusableCode/languages.html") %>
+    </select> <br><br>
+    
+    <label for="genres">Genres:</label>
+    <select id="genres" name="genres">
+      <%- include("../reusableCode/genresOptions.html") %>
+    </select> <br><br>
+
+
+    <button id="searchMovieBtn" type="submit">Search</button>
+
+  </form>
+
+  <a href="menu">Back To Menu Page</a>
+
+</body>
+
+</html>

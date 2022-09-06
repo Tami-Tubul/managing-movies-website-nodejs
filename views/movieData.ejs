@@ -1,0 +1,23 @@
+<html>
+  <body>
+
+    <h1>Movie Data</h1>
+      ID : <%= movie.id %><br>
+      Name: <%= movie.name %><br>
+      Genres: <%= movie.genres %><br>
+      Language: <%= movie.language %><br>
+
+      <% if(movie.image){ %>
+
+          <img src="<%= movie.image.medium %>"> <br>
+
+      <% } %>
+
+
+    <a href="#" onclick="history.back()">Back</a> <br>
+    <a href="/menu">Back To Menu Page</a>
+
+
+  </body>
+
+</html>
